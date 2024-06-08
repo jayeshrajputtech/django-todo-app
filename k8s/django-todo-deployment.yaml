@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: django-deployment
+  namespace: django
+  labels:
+    app: django-todo
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: django-todo
+  template:
+    metadata:
+      labels:
+        app: django-todo
+    spec:
+      containers:
+      - name: django-todo
+        image: jayeshrajput/todo-django-app
+        ports:
+        - containerPort: 8000
