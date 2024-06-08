@@ -6,6 +6,6 @@ metadata:
 spec:
   containers:
   - name: django
-    image: jayeshrajput/todo-django-app
+    image: jayeshrajput/django-todo
     ports:
       - containerPort: 8000
